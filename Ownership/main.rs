@@ -57,7 +57,7 @@ fn main(){
     // Gives Error - s2's reference deleted at the end of the scope. 
     // a value cannot remain without an owner. 
     // println!("s1: {}", s1);
-
+    
 }
 
 
