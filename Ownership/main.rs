@@ -40,6 +40,9 @@ fn main(){
     // println!("s1: {}", s1);
 }
 
+
+
+
 fn calculate_length_1(s: &String) -> usize {
     // only accepts the reference of a String by using &String.
     s.len()
@@ -50,3 +53,8 @@ fn calculate_length_2(s: String) -> usize {
     s.len()
     // the value of the String s is deleted here, because s is going out of scope. 
 }
+
+
+
+
+
