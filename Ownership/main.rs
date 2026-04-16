@@ -38,6 +38,26 @@ fn main(){
     }
     // Gives error since s1 is empty.
     // println!("s1: {}", s1);
+
+
+    // declaring a String reference outside the scope.
+    let s1: &String;
+
+    {
+        // declaring a String variable with value inside the scope.
+        let s2: String = String::from("RUST");
+        // assigning reference to s2 to s1 in the scope.
+        s1 = &s2;
+        println!("s1: {}", s1);
+        println!("s2: {}", s2);
+
+        // s2 deleted at the end of the scope, so did its values, and all references.
+    }
+
+    // Gives Error - s2's reference deleted at the end of the scope. 
+    // a value cannot remain without an owner. 
+    // println!("s1: {}", s1);
+
 }
 
 
