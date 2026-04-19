@@ -17,6 +17,10 @@ struct User {
 
 impl Book {
 
+    fn new(title: String, author: String, pages: u32, available: bool) -> Self {
+        Self{ title, author, pages, available }
+    }
+
     fn set_title(&mut self, new_title: String) {
         self.title = new_title;
     }
@@ -26,9 +30,7 @@ impl Book {
     }
 }
 
-fn create_book(title: String, author: String, pages: u32, available: bool) -> Book {
-    Book{ title, author, pages, available }
-}
+
 
 fn main(){
 
@@ -64,7 +66,7 @@ fn main(){
 
     // using methods
 
-    let mut book:Book = create_book("The Alchemist".to_string(), "Paulo Cohlo".to_string(), 200, true);
+    let mut book:Book = Book::new("The Alchemist".to_string(), "Paulo Cohlo".to_string(), 200, true);
     
     book.print_book();
     book.set_title(String::from("Only Alchemist"));
