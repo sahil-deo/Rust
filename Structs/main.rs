@@ -1,21 +1,36 @@
 // Structs
 
+struct Book {
+    title: String,
+    author: String, 
+    pages: u32,
+    available: bool,
+}
 
+struct User {
+    active: bool,
+    username: String, 
+    email: String, 
+}
 
+// struct methods
+
+impl Book {
+
+    fn set_title(&mut self, new_title: String) {
+        self.title = new_title;
+    }
+
+    fn print_book(&self) {
+        println!("Title: {}, Author: {}, Pages: {}, Avaiable: {}", self.title, self.author, self.pages, self.available);
+    }
+}
+
+fn create_book(title: String, author: String, pages: u32, available: bool) -> Book {
+    Book{ title, author, pages, available }
+}
 
 fn main(){
-    struct Book {
-        title: String,
-        author: String, 
-        pages: u32,
-        available: bool,
-    }
-
-    struct User {
-        active: bool,
-        username: String, 
-        email: String, 
-    }
 
     let mut user1: User = User {
         active: true,
@@ -47,12 +62,12 @@ fn main(){
     };
     println!("user3: {}, {}, {}", user3.active, user3.username, user3.email);
 
-    // Tuple Structs
-    struct Color(i32, i32, i32, i32);
+    // using methods
 
-    let black: Color = Color(255, 255, 255, 255);
-
+    let mut book:Book = create_book("The Alchemist".to_string(), "Paulo Cohlo".to_string(), 200, true);
     
-
+    book.print_book();
+    book.set_title(String::from("Only Alchemist"));
+    book.print_book();
 
 }
