@@ -22,6 +22,13 @@ enum Ip {
     V6(String)
 }
 
+fn checkEnum(kind: IpAddrKind) -> String {
+    match (kind) {
+        IpAddrKind::V4 => "V4".to_string(),
+        IpAddrKind::V6 => "V6".to_string(),
+    }
+}
+
 fn main(){
     
 
@@ -42,6 +49,8 @@ fn main(){
     let e_work: Ip = Ip::V6(String::from("::1"));
 
     // printing values
-    println!("Home {}", home.addr);
-    println!("Work {}", work.addr);
+    println!("Home {}", checkEnum(home.kind));
+    println!("Work {}", checkEnum(work.kind));
+
+
 }
